@@ -1,3 +1,4 @@
+//app\contexts\ThemeContext.tsx
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 interface ThemeContextProps {
@@ -18,7 +19,7 @@ export const ThemeProvider: React.FC<ThemeContextProps> = ({ children }) => {
     toggleTheme,
     colors: isDarkMode
       ? { background: '#333', text: '#fff', cardBackground: '#555' }
-      : { background: '#f0f8ff', text: '#333', cardBackground: '#fff' },
+      : { background: '#ffffff', text: '#333', cardBackground: '#fff' },
   };
 
   return (

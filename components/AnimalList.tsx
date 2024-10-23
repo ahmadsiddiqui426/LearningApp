@@ -1,3 +1,4 @@
+//components\AnimalList.tsx
 import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import AnimalCard from './AnimalCard';

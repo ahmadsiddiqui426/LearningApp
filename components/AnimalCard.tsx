@@ -1,3 +1,4 @@
+//components\AnimalCard.tsx
 import React, { useRef } from 'react';
 import { Text, Image, TouchableOpacity, StyleSheet, Animated, ImageSourcePropType } from 'react-native';
 import { useTheme } from "../app/contexts/ThemeContext";
