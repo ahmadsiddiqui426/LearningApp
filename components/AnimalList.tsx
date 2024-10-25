@@ -33,7 +33,6 @@ const AnimalList = () => {
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <Header />
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         {animals.map((animal, index) => (
           <AnimalCard

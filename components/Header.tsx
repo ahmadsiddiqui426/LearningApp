@@ -2,26 +2,24 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme } from "../app/contexts/ThemeContext";
-import { useNavigation } from '@react-navigation/native'; 
-import { StackNavigationProp } from '@react-navigation/stack'; // Import the StackNavigationProp
-import { RootStackParamList } from './navigation/types'; // Adjust the import path accordingly
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-// Define the type for your navigation prop
-type HeaderNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+// Update the props to accept setCurrentScreen
+interface HeaderProps {
+  setCurrentScreen: (screen: string) => void; // Accept a function prop
+}
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = ({ setCurrentScreen }) => {
   const { toggleTheme, isDarkMode } = useTheme();
-  const navigation = useNavigation<HeaderNavigationProp>(); // Specify the type here
 
   // Function to handle back navigation
-  const handleBackPress = () => {
-    navigation.navigate('Home'); // Navigate to the Home screen
+  const handleHomePress = () => {
+    setCurrentScreen('Home'); // Use setCurrentScreen to navigate to Home
   };
 
   return (
     <View style={styles.header}>
-      <TouchableOpacity onPress={handleBackPress}>
+      <TouchableOpacity onPress={handleHomePress}>
         <Icon
           name="home" // Home icon
           size={30}

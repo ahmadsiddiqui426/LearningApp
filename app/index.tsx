@@ -10,10 +10,6 @@ import ShapesScreen from '../components/ShapesScreen';
 import AnimalsScreen from '../components/AnimalsScreen';
 import BirdsScreen from '../components/BirdsScreen';
 import Header from '../components/Header';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -69,7 +65,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <SafeAreaView style={styles.container}>
-        <Header />
+        <Header setCurrentScreen={setCurrentScreen} /> {/* Pass the function here */}
         {renderScreen()}
       </SafeAreaView>
     </ThemeProvider>
